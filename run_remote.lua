@@ -1,4 +1,5 @@
 local tArgs = { ... }
+local url = table.remove(tArgs, 1)
 
 if not http then
     printError("wget requires the http API")
