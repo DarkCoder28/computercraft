@@ -26,4 +26,3 @@ local x,y = canvas.getSize() -- 512x288
 for i=0,10,1 do
     canvas.addLine({i*10,0},{x,y},col.red,1)
 end
-while true do end
