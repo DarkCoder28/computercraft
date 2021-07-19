@@ -1,0 +1,1 @@
+shell.run("wget", "run", "http://192.168.1.64:3000/agsheeran/computercraft/raw/branch/master/FILEDIR_FROM_GIT")
