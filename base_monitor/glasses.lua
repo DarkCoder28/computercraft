@@ -26,7 +26,7 @@ col = {
 }
 
 for i = 1, x do
-    for j = 1, y do
+    for j = 1, 10 do
         local c = col.purple
         if ((i+j)%2 == 0) then
             c = col.white
