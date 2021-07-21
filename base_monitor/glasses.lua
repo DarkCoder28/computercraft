@@ -1,3 +1,10 @@
+rednet.open("top")
+rednet.host("base-mon", "client")
+local link = peripheral.wrap("back")
+local canvas = link.canvas()
+canvas.clear()
+local x,y = canvas.getSize() -- 512x288
+
 -- Define Colours
 col = {
     --      0xRRGGBBOO
@@ -19,17 +26,31 @@ col = {
     black = 0x191919ff
 }
 
-rednet.open("top")
-rednet.host("base-mon", "client")
+local function split(msg)
+    local t = {}
+    local count = 0
+    for i in msg:gmatch "|" do
+        count = count+1
+        t[count]=i
+    end
+    t["len"]=count
+    return t
+end
 
-local link = peripheral.wrap("back")
-link.canvas().clear()
-local canvas = link.canvas()
-local x,y = canvas.getSize() -- 512x288
+status = {
+    power = 0.2
+}
+
+function receiveAndProcessMessages()
+    --
+end
+function updateDisplay()
+    canvas.clear()
+    canvas.addRectangle(0,0,1,tostring(status.power):len(), col.red)
+    canvas.addText({0,0}, tostring(power), col.white, 1)
+end
 
 while true do
-    local id, val, protocol = rednet.receive("base-mon", 10)
-    if (id) then
-        print(val)
-    end
+    receiveAndProcessMessages()
+    updateDisplay()
 end
