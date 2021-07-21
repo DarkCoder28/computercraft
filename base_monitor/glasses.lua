@@ -20,7 +20,7 @@ col = {
 }
 
 rednet.open("top")
-rendet.host("base-mon", "client")
+rednet.host("base-mon", "client")
 
 local link = peripheral.wrap("back")
 link.canvas().clear()
