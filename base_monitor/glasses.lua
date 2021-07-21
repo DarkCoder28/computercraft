@@ -25,18 +25,18 @@ col = {
     black = 0x191919ff
 }
 
-for i = 1, x do
-    for j = 1, 10 do
-        local c = col.purple
-        if ((i+j)%2 == 0) then
-            c = col.white
-        else
-            c = col.black
-        end
-        canvas.addDot({i,j}, c)
-    end
-end
-os.exit()
+--for i = 1, x do
+--    for j = 1, 10 do
+--        local c = col.purple
+--        if ((i+j)%2 == 0) then
+--            c = col.white
+--        else
+--            c = col.black
+--        end
+--        canvas.addDot({i,j}, c)
+--    end
+--end
+--os.exit()
 
 local function split(msg)
     local t = {}
@@ -61,8 +61,8 @@ function receiveAndProcessMessages()
 end
 function updateDisplay()
     canvas.clear()
-    canvas.addRectangle(0,0,tostring(status.power):len()*4, 5, col.red)
-    canvas.addText({0,0}, tostring(power), col.white, 1)
+    canvas.addRectangle(2,11,tostring(status.power):len()*4, 5, col.red)
+    canvas.addText({2,11}, tostring(power), col.white, 1)
 end
 
 while true do
