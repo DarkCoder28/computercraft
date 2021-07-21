@@ -5,6 +5,18 @@ local canvas = link.canvas()
 canvas.clear()
 local x,y = canvas.getSize() -- 512x288
 
+for i in range(0,x) do
+    for j in range(0,y) do
+        local c = col.purple
+        if ((i+j)%2 == 0) then
+            c = col.white
+        else
+            c = col.black
+        end
+        canvas.addDot({i,j}, c)
+    end
+end
+os.exit()
 -- Define Colours
 col = {
     --      0xRRGGBBOO
