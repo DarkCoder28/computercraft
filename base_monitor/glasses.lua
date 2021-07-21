@@ -19,10 +19,17 @@ col = {
     black = 0x191919ff
 }
 
+rednet.open("top")
+rendet.host("base-mon", "client")
+
 local link = peripheral.wrap("back")
 link.canvas().clear()
 local canvas = link.canvas()
 local x,y = canvas.getSize() -- 512x288
-for i=-10,10,1 do
-    canvas.addLine({i*10,0},{x,y},col.red,1)
+
+while true do
+    local id, val, protocol = rednet.receive("base-mon", 10)
+    if (id) then
+        print(val)
+    end
 end

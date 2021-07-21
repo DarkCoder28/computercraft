@@ -6,6 +6,6 @@ function getLevel()
 end
 
 while true do
-    rednet.broadcast(getLevel(), "base-mon")
+    rednet.broadcast("capacitor|"+getLevel(), "base-mon")
     os.sleep(5)
 end
