@@ -36,6 +36,7 @@ for i = 1, x do
         canvas.addDot({i,j}, c)
     end
 end
+canvas.addRectangle(6,60,12, 5, col.red)
 os.exit()
 
 local function split(msg)
