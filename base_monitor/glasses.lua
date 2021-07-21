@@ -49,7 +49,7 @@ function receiveAndProcessMessages()
 end
 function updateDisplay()
     canvas.clear()
-    canvas.addRectangle(0,0,1,tostring(status.power):len()*4, col.red)
+    canvas.addRectangle(0,0,tostring(status.power):len()*4, 5, col.red)
     canvas.addText({0,0}, tostring(power), col.white, 1)
 end
 
