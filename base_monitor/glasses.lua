@@ -42,11 +42,14 @@ status = {
 }
 
 function receiveAndProcessMessages()
-    --
+    local id, val = rednet.receive("base-mon", 10)
+    if (id) then
+        print(id..": "..val)
+    end
 end
 function updateDisplay()
     canvas.clear()
-    canvas.addRectangle(0,0,1,tostring(status.power):len(), col.red)
+    canvas.addRectangle(0,0,1,tostring(status.power):len()*4, col.red)
     canvas.addText({0,0}, tostring(power), col.white, 1)
 end
 
