@@ -5,8 +5,8 @@ local canvas = link.canvas()
 canvas.clear()
 local x,y = canvas.getSize() -- 512x288
 
-for i in range(0,x) do
-    for j in range(0,y) do
+for i = 1, x do
+    for j = 1, y do
         local c = col.purple
         if ((i+j)%2 == 0) then
             c = col.white
