@@ -62,9 +62,7 @@ function receiveAndProcessMessages()
 end
 function updateDisplay()
     canvas.clear()
-    -- #7f9fad
-    -- #bebbb7
-    canvas.addRectangle(6,64,tostring(status.power):len()*4, 5, col.red)
+    canvas.addRectangle(5,64,tostring(status.power):len()*4, 12, 0x32c8bb6c)
     canvas.addText({6,64}, tostring(power), col.white, 1)
 end
 
