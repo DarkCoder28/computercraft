@@ -33,7 +33,7 @@ for i = 1, x do
         end
     end
 end
-canvas.addRectangle(20, y-24, 2, 18, 0x32c8bb6c)
+canvas.addRectangle(20, y-20, 2, 18, 0x32c8bb6c)
 canvas.addRectangle(22, y-22, 22*4, 20, 0x32c8bb6c)
 os.exit()
 
