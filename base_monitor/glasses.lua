@@ -1,3 +1,6 @@
+if (~fs.exists('/inspect.lua')) then
+    shell.run("wget", "run", "https://github.com/kikito/inspect.lua/raw/master/inspect.lua")
+end
 rednet.open("top")
 rednet.host("base-mon", "client")
 link = peripheral.wrap("back")
