@@ -1,9 +1,9 @@
 rednet.open("top")
 rednet.host("base-mon", "client")
-local link = peripheral.wrap("back")
-local canvas = link.canvas()
+link = peripheral.wrap("back")
+canvas = link.canvas()
 canvas.clear()
-local x,y = canvas.getSize() -- 512x288
+_,y = canvas.getSize() -- 512x288
 -- Define Colours
 col = {
     --      0xRRGGBBOO
@@ -43,7 +43,7 @@ col = {
 --canvas.addRectangle(112, y-19, 1, 14, col.teal-0x93)
 --os.exit()
 
-local function split(msg)
+function split(msg)
     local t = {}
     local count = 0
     for i in msg:gmatch "|" do
@@ -62,7 +62,8 @@ function receiveAndProcessMessages()
     local id, val = rednet.receive("base-mon", 10)
     if (id) then
         local msg = split(val)
-        print(id..": "..msg[2])
+        msg[91] = 6
+        print(id..": "..val)
     end
 end
 function updateDisplay()
