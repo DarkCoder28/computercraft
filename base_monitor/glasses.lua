@@ -60,10 +60,19 @@ status = {
 
 inspect = require('/inspect')
 function receiveAndProcessMessages()
-    local id, val = rednet.receive("base-mon", 10)
+    local id, val = rednet.receive("base-mon")
     if (id) then
-        local msg = split(val)
-        print(inspect(msg))
+        msg = split(val)
+        case =
+        {
+            ["capacitor"] = function()
+                status.power = msg[2]+0
+            end
+        }
+        if (case[msg[1]]) then
+            case[msg[1]]()
+        end
+        print(inspect(status))
     end
 end
 function updateDisplay()
