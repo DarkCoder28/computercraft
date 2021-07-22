@@ -58,11 +58,12 @@ status = {
     power = 0.2
 }
 
+inspect = require('inspect')
 function receiveAndProcessMessages()
     local id, val = rednet.receive("base-mon", 10)
     if (id) then
         local msg = split(val)
-        print(msg)
+        print(inspect(msg))
     end
 end
 function updateDisplay()
