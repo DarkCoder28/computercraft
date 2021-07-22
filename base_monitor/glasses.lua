@@ -1,4 +1,4 @@
-if (~fs.exists('/inspect.lua')) then
+if (fs.exists('/inspect.lua') == false) then
     shell.run("wget", "run", "https://github.com/kikito/inspect.lua/raw/master/inspect.lua")
 end
 rednet.open("top")
