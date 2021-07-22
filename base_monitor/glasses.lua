@@ -75,6 +75,7 @@ function updateDisplay()
     canvas.addRectangle(21, y-23, 90, 1, col.white)
     canvas.addRectangle(19, y-22, 3, 1, col.white)
     canvas.addRectangle(19, y-21, 1, 2, col.white)
+    canvas.addRectangle(18, y-20, 1, 16, col.white)
     -- End Info Box
     canvas.addText({6,64}, tostring(power), col.white, 1)
 end
