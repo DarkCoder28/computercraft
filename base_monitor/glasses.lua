@@ -27,21 +27,21 @@ col = {
     teal = 0x32c8bbff
 }
 
-for i = 1, x do
-    for j = 1, y do
-        local c = col.purple
-        if ((i+j)%2 == 0) then
-            canvas.addDot({i,j}, col.white-0x7f)
-        end
-    end
-end
+--for i = 1, x do
+--    for j = 1, y do
+--        local c = col.purple
+--        if ((i+j)%2 == 0) then
+--            canvas.addDot({i,j}, col.white-0x7f)
+--        end
+--    end
+--end
 --canvas.addRectangle(0,y-26, 22*6, 26, col.black)
-canvas.addRectangle(19, y-19, 1, 14, col.teal-0x93)
-canvas.addRectangle(20, y-21, 2, 18, col.teal-0x93)
-canvas.addRectangle(22, y-22, 22*4, 20, col.teal-0x93)
-canvas.addRectangle(110, y-21, 2, 18, col.teal-0x93)
-canvas.addRectangle(112, y-19, 1, 14, col.teal-0x93)
-os.exit()
+--canvas.addRectangle(19, y-19, 1, 14, col.teal-0x93)
+--canvas.addRectangle(20, y-21, 2, 18, col.teal-0x93)
+--canvas.addRectangle(22, y-22, 22*4, 20, col.teal-0x93)
+--canvas.addRectangle(110, y-21, 2, 18, col.teal-0x93)
+--canvas.addRectangle(112, y-19, 1, 14, col.teal-0x93)
+--os.exit()
 
 local function split(msg)
     local t = {}
@@ -66,7 +66,13 @@ function receiveAndProcessMessages()
 end
 function updateDisplay()
     canvas.clear()
-    canvas.addRectangle(5,64,tostring(status.power):len()*4, 10, 0x32c8bb6c)
+    -- Draw Info Box
+    canvas.addRectangle(19, y-19, 1, 14, col.teal-0x93)
+    canvas.addRectangle(20, y-21, 2, 18, col.teal-0x93)
+    canvas.addRectangle(22, y-22, 22*4, 20, col.teal-0x93)
+    canvas.addRectangle(110, y-21, 2, 18, col.teal-0x93)
+    canvas.addRectangle(112, y-19, 1, 14, col.teal-0x93)
+    -- End Info Box
     canvas.addText({6,64}, tostring(power), col.white, 1)
 end
 
