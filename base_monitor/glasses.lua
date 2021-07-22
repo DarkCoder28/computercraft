@@ -46,7 +46,7 @@ col = {
 function split(msg)
     local t = {}
     local count = 0
-    for i in msg:gmatch "|" do
+    for i in msg:gmatch "[^|]+" do
         count = count+1
         t[count]=i
     end
