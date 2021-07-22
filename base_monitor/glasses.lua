@@ -22,7 +22,9 @@ col = {
     brown = 0x7F664Cff,
     green = 0x57A64Eff,
     red = 0xCC4C4Cff,
-    black = 0x191919ff
+    black = 0x191919ff,
+    -- CUSTOM
+    teal = 0x32c8bb6c
 }
 
 for i = 1, x do
@@ -33,8 +35,9 @@ for i = 1, x do
         end
     end
 end
-canvas.addRectangle(20, y-20, 2, 16, 0x32c8bb6c)
-canvas.addRectangle(22, y-22, 22*4, 20, 0x32c8bb6c)
+canvas.addRectangle(19, y-16, 1, 8, col.teal)
+canvas.addRectangle(20, y-20, 2, 16, col.teal)
+canvas.addRectangle(22, y-22, 22*4, 20, col.teal)
 os.exit()
 
 local function split(msg)
