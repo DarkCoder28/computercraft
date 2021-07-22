@@ -57,6 +57,7 @@ end
 status = {
     power = 0.2
 }
+print(inspect(status))
 
 inspect = require('/inspect')
 function receiveAndProcessMessages()
