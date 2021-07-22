@@ -39,6 +39,7 @@ canvas.addRectangle(0,y-26, 22*6, 26, col.black)
 canvas.addRectangle(19, y-19, 1, 14, col.teal+0x93)
 canvas.addRectangle(20, y-21, 2, 18, col.teal+0x93)
 canvas.addRectangle(22, y-22, 22*4, 20, col.teal+0x93)
+canvas.addRectangle(111, y-21, 2, 18, col.teal+0x93)
 os.exit()
 
 local function split(msg)
