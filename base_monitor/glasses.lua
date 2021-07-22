@@ -97,7 +97,7 @@ function updateDisplay()
     canvas.addRectangle(112, y-5, 1, 2, col.white)
     canvas.addRectangle(110, y-3, 3, 1, col.white)
     -- End Info Box
-    canvas.addText({6,64}, tostring(power), col.white, 1)
+    canvas.addText({6,64}, (tostring(status.power*100):gmatch "[^%.]+")[1], col.white, 1)
 end
 
 while true do
