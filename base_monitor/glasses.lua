@@ -33,7 +33,7 @@ for i = 1, x do
         end
     end
 end
-canvas.addRectangle(44,y-23,("nil"):len()*4, 10, 0x32c8bb6c)
+canvas.addRectangle(22, y-23, 22, 22, 0x32c8bb6c)
 os.exit()
 
 local function split(msg)
