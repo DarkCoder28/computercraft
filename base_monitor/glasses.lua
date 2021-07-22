@@ -58,7 +58,7 @@ status = {
     power = 0.2
 }
 
-inspect = require('inspect')
+inspect = require('/inspect')
 function receiveAndProcessMessages()
     local id, val = rednet.receive("base-mon", 10)
     if (id) then

@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="lua-lib" type="Lua">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/../lua-lib" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
