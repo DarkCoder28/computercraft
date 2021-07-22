@@ -24,7 +24,7 @@ col = {
     red = 0xCC4C4Cff,
     black = 0x191919ff,
     -- CUSTOM
-    teal = 0x32c8bb6c
+    teal = 0x32c8bbff
 }
 
 for i = 1, x do
@@ -36,11 +36,11 @@ for i = 1, x do
     end
 end
 canvas.addRectangle(0,y-26, 22*6, 26, col.black)
-canvas.addRectangle(19, y-19, 1, 14, col.teal+0x93)
-canvas.addRectangle(20, y-21, 2, 18, col.teal+0x93)
-canvas.addRectangle(22, y-22, 22*4, 20, col.teal+0x93)
-canvas.addRectangle(110, y-21, 2, 18, col.teal+0x93)
-canvas.addRectangle(113, y-19, 1, 14, col.teal+0x93)
+canvas.addRectangle(19, y-19, 1, 14, col.teal-0x93)
+canvas.addRectangle(20, y-21, 2, 18, col.teal-0x93)
+canvas.addRectangle(22, y-22, 22*4, 20, col.teal-0x93)
+canvas.addRectangle(110, y-21, 2, 18, col.teal-0x93)
+canvas.addRectangle(112, y-19, 1, 14, col.teal-0x93)
 os.exit()
 
 local function split(msg)
