@@ -61,7 +61,8 @@ status = {
 function receiveAndProcessMessages()
     local id, val = rednet.receive("base-mon", 10)
     if (id) then
-        print(id..": "..val)
+        local msg = split(val)
+        print(id..": "..msg[2])
     end
 end
 function updateDisplay()
