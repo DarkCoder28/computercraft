@@ -2,7 +2,7 @@ if (fs.exists('/inspect.lua') == false) then
     shell.run("wget", "https://github.com/kikito/inspect.lua/raw/master/inspect.lua", "inspect.lua")
 end
 rednet.open("top")
-rednet.host("base-mon", "client")
+rednet.host("base-mon", "client_"..os.getComputerLabel())
 link = peripheral.wrap("back")
 canvas = link.canvas()
 canvas.clear()
