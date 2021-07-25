@@ -7,4 +7,4 @@ chest = peripheral.wrap("front")
 machine = peripheral.wrap("top")
 me = peripheral.wrap("back")
 
-print(inspect(machine.list()))
+http.post('192.168.1.47:8080', inspect(machine.list()))
