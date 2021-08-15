@@ -110,7 +110,7 @@ function updateDisplay()
     -- End Info Box
     -- Info Box Content
     canvas.addText({21,y-20}, 'Power: '..(tostring(math.ceil(status.power*100)):gmatch "[^%.]+")()..'%', col.white, 1)
-    canvas.addText({21,y-16}, 'ItemTypes: '..tostring(status.itemTypes), col.white, 1)
+    canvas.addText({21,y-10}, 'ItemTypes: '..tostring(status.itemTypes), col.white, 1)
     -- End Info Box Content
 end
 
