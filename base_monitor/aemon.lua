@@ -1,5 +1,5 @@
 local ae = peripheral.wrap("left")
-rednet.open("bottom")
+rednet.open("top")
 rednet.host("base-mon", "ae")
 
 while true do
