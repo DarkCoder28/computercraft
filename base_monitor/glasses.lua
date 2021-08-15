@@ -59,7 +59,8 @@ function split(msg)
 end
 
 status = {
-    power = 0.2
+    power = 0.2,
+    itemTypes = 0
 }
 
 print(pretty.pretty(status))
