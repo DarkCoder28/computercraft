@@ -1,6 +1,7 @@
-if (fs.exists('/inspect.lua') == false) then
-    shell.run("wget", "https://github.com/kikito/inspect.lua/raw/master/inspect.lua", "inspect.lua")
-end
+--if (fs.exists('/inspect.lua') == false) then
+--    shell.run("wget", "https://github.com/kikito/inspect.lua/raw/master/inspect.lua", "inspect.lua")
+--end
+pretty = require "cc.pretty"
 rednet.open("top")
 rednet.host("base-mon", "client_"..os.getComputerLabel())
 link = peripheral.wrap("back")
@@ -60,8 +61,10 @@ end
 status = {
     power = 0.2
 }
-inspect = require('/inspect')
-print(inspect(status))
+
+print(pretty.pretty(status))
+--inspect = require('/inspect')
+--print(inspect(status))
 
 function receiveAndProcessMessages()
     local id, val = rednet.receive("base-mon")
@@ -71,12 +74,16 @@ function receiveAndProcessMessages()
         {
             ["capacitor"] = function()
                 status.power = msg[2]+0
+            end,
+            ["ae"] = function()
+                status.itemTypes = msg[2]+0
             end
         }
         if (case[msg[1]]) then
             case[msg[1]]()
         end
-        print(inspect(status))
+        print(pretty.pretty(status))
+        --print(inspect(status))
     end
 end
 function updateDisplay()
@@ -102,6 +109,7 @@ function updateDisplay()
     -- End Info Box
     -- Info Box Content
     canvas.addText({21,y-20}, 'Power: '..(tostring(math.ceil(status.power*100)):gmatch "[^%.]+")()..'%', col.white, 1)
+    canvas.addText({21,y-16}, 'ItemTypes: '..tostring(status.itemTypes), col.white, 1)
     -- End Info Box Content
 end
 

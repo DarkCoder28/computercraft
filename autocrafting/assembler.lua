@@ -7,4 +7,6 @@ chest = peripheral.wrap("front")
 machine = peripheral.wrap("top")
 me = peripheral.wrap("back")
 
+-- Format post data like 'hello=world&foo=bar'
+
 print(http.post('http://192.168.1.47:3001/', inspect(machine.list())))
