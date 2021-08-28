@@ -28,7 +28,10 @@ function auto_complete(partial)
 end
 
 while true do
-    local input = read(nil, history, auto_complete)
+    term.clear()
+    term.setCursorPos(1,1)
+    write('> ')
+    local input = read(nil, history, function(text) return auto_complete(text) end)
     for k,v in pairs(locs) do
         if input == k then
             table.insert(history,input)
