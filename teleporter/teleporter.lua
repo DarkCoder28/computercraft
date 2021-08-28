@@ -30,8 +30,8 @@ end
 while true do
     term.clear()
     term.setCursorPos(1,1)
-    print('Welcome to TelOS! Please enter your destination.')
-    print('If you would like a list of possible destinations, enter \'help\'.')
+    print('Welcome to TelOS! Please enter your destination.\n')
+    print('If you would like a list of possible destinations, enter \'help\'.\n\n')
     write('> ')
     local input = read(nil, history, function(text) return auto_complete(text) end)
     if input == 'help' then
