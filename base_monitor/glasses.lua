@@ -1,7 +1,7 @@
 --if (fs.exists('/inspect.lua') == false) then
 --    shell.run("wget", "https://github.com/kikito/inspect.lua/raw/master/inspect.lua", "inspect.lua")
 --end
-pretty = require "cc.pretty"
+--pretty = require "cc.pretty"
 rednet.open("top")
 rednet.host("base-mon", "client_"..os.getComputerLabel())
 link = peripheral.wrap("back")
@@ -63,7 +63,7 @@ status = {
     itemTypes = 0
 }
 
-print(pretty.pretty(status))
+--print(pretty.pretty(status))
 --inspect = require('/inspect')
 --print(inspect(status))
 
@@ -83,7 +83,7 @@ function receiveAndProcessMessages()
         if (case[msg[1]]) then
             case[msg[1]]()
         end
-        print(pretty.pretty(status))
+        --print(pretty.pretty(status))
         --print(inspect(status))
     end
 end
