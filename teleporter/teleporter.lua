@@ -34,7 +34,7 @@ while true do
     print('Welcome to TelOS!\n')
     term.setTextColour(colours.white)
     print('Please enter your destination.')
-    term.setTextColour(colours.gray)
+    term.setTextColour(colours.grey)
     print('If you would like a list of possible destinations, enter \'help\'.\n')
     term.setTextColour(colours.white)
     write('> ')
