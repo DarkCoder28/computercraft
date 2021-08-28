@@ -14,7 +14,7 @@ end
 
 function auto_complete(partial)
     local possibilities = {}
-    for k,_ in locs do
+    for k,_ in pairs(locs) do
         if starts_with(k,partial) then
             possibilities:insert(k)
         end
@@ -23,7 +23,7 @@ end
 
 while true do
     local input = read(nil, history, auto_complete, 'island')
-    for k,v in locs do
+    for k,v in pairs(locs) do
         if input == k then
             history:insert(input)
             tele.pullItems("bottom",v,1)
