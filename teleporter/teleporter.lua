@@ -8,6 +8,11 @@ locs = {}
 locs['island'] = 1
 locs['old-base'] = 2
 locs['moon'] = 3
+locs['nether'] = 4
+locs['void'] = 5
+locs['end'] = 6
+locs['spawn'] = 7
+locs['blaze'] = 8
 
 function starts_with(str, start)
     return str:sub(1, #start) == start
