@@ -7,6 +7,7 @@ local history = {}
 locs = {}
 locs['island'] = 1
 locs['old-base'] = 2
+locs['moon'] = 3
 
 function starts_with(str, start)
     return str:sub(1, #start) == start
@@ -22,7 +23,7 @@ function auto_complete(partial)
 end
 
 while true do
-    local input = read(nil, history, auto_complete, 'island')
+    local input = read(nil, history, auto_complete)
     for k,v in pairs(locs) do
         if input == k then
             table.insert(history,input)
