@@ -32,16 +32,24 @@ while true do
     term.setCursorPos(1,1)
     write('> ')
     local input = read(nil, history, function(text) return auto_complete(text) end)
-    for k,v in pairs(locs) do
-        if input == k then
-            table.insert(history,input)
-            tele.pullItems("bottom",v,1)
-            sleep(0.25)
-            tele.pushItems("bottom",1,1,v)
-            redstone.setOutput('left', true)
-            sleep(0.25)
-            redstone.setOutput('left', false)
-            break
+    if input == 'help' then
+        print('Possible Destinations: (Press \'Return\' to exit)')
+        for k,_ in pairs(locs) do
+            print(k..',')
+        end
+        read()
+    else
+        for k,v in pairs(locs) do
+            if input == k then
+                table.insert(history,input)
+                tele.pullItems("bottom",v,1)
+                sleep(0.25)
+                tele.pushItems("bottom",1,1,v)
+                redstone.setOutput('left', true)
+                sleep(0.25)
+                redstone.setOutput('left', false)
+                break
+            end
         end
     end
 end
