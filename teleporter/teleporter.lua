@@ -30,9 +30,13 @@ end
 while true do
     term.clear()
     term.setCursorPos(1,1)
-    -- Print welcome message in yellow on black
-    term.blit('Welcome to TelOS!', '44444444444444444', 'fffffffffffffffff')
-    print('\n\nPlease enter your destination.\nIf you would like a list of possible destinations, enter \'help\'.\n')
+    term.setTextColour(colours.yellow)
+    print('Welcome to TelOS!\n')
+    term.setTextColour(colours.white)
+    print('Please enter your destination.')
+    term.setTextColour(colours.gray)
+    print('If you would like a list of possible destinations, enter \'help\'.\n')
+    term.setTextColour(colours.white)
     write('> ')
     local input = read(nil, history, function(text) return auto_complete(text) end)
     if input == 'help' then
