@@ -31,8 +31,8 @@ while true do
     term.clear()
     term.setCursorPos(1,1)
     -- Print welcome message in yellow on black
-    term.blit('Welcome to TelOS!\n\n', '44444444444444444ff', 'fffffffffffffffffff')
-    print('Please enter your destination.\nIf you would like a list of possible destinations, enter \'help\'.\n')
+    term.blit('Welcome to TelOS!', '44444444444444444', 'fffffffffffffffff')
+    print('\n\nPlease enter your destination.\nIf you would like a list of possible destinations, enter \'help\'.\n')
     write('> ')
     local input = read(nil, history, function(text) return auto_complete(text) end)
     if input == 'help' then
