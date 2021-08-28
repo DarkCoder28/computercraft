@@ -16,7 +16,7 @@ function auto_complete(partial)
     local possibilities = {}
     for k,_ in pairs(locs) do
         if starts_with(k,partial) then
-            possibilities:insert(k)
+            table.insert(possibilities,k)
         end
     end
 end
@@ -25,7 +25,7 @@ while true do
     local input = read(nil, history, auto_complete, 'island')
     for k,v in pairs(locs) do
         if input == k then
-            history:insert(input)
+            table.insert(history,input)
             tele.pullItems("bottom",v,1)
             sleep(0.25)
             tele.pushItems("bottom",1,1,v)
