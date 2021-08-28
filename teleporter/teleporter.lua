@@ -4,11 +4,11 @@ redstone.setOutput('left', false)
 
 local history = {}
 
-local locs = {}
+locs = {}
 locs['island'] = 1
 locs['old-base'] = 2
 
-local function starts_with(str, start)
+function starts_with(str, start)
     return str:sub(1, #start) == start
 end
 
