@@ -30,7 +30,7 @@ end
 while true do
     term.clear()
     term.setCursorPos(1,1)
-    blit('Welcome to TelOS!\n\n', colours.yellow, colours.black)
+    term.blit('Welcome to TelOS!\n\n', colours.yellow, colours.black)
     print('Please enter your destination.\nIf you would like a list of possible destinations, enter \'help\'.\n')
     write('> ')
     local input = read(nil, history, function(text) return auto_complete(text) end)
