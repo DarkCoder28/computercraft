@@ -26,7 +26,7 @@ local function receiver()
     end
 end
 
-chat.capture()
+chat.capture('')
 local function transmitter()
     local _, message, _, player = os.pullEvent('chat_capture')
     chat.say('f')
