@@ -1,4 +1,4 @@
-chat = peripheral.wrap('left')
+--chat = peripheral.wrap('left')
 connection_url = 'ws://192.168.1.64:3002'
 local ws = http.websocket(connection_url)
 
