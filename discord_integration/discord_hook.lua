@@ -1,5 +1,5 @@
---chat = peripheral.wrap('left')
 pretty = (require('cc.pretty')).pretty
+chat = peripheral.wrap('left')
 connection_url = 'ws://192.168.1.64:3002'
 local ws = http.websocket(connection_url)
 
@@ -22,6 +22,6 @@ while true do
         data = split(response)
         data[1] = data[1]:sub(1,data[1]:len())
         data[2] = data[2]:sub(2)
-        print(data[1]..': '..data[2])
+        chat.say(data[1]..': '..data[2])
     end
 end
