@@ -22,6 +22,6 @@ while true do
         data = split(response)
         data[1] = data[1]:sub(1,data[1]:len())
         data[2] = data[2]:sub(2)
-        chat.say(data[1]..': '..data[2])
+        chat.say('<'..data[1]..'> '..data[2])
     end
 end
