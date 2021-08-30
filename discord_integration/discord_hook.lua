@@ -20,7 +20,7 @@ while true do
     local _, url, response, isBinary = os.pullEvent("websocket_message")
     if (url == connection_url and isBinary == false) then
         data = split(response)
-        data[1] = data[1]:sub(1,data[1]:len())
+        data[1] = data[1]:sub(1,data[1]:len()-1)
         data[2] = data[2]:sub(2)
         chat.say('<'..data[1]..'> '..data[2])
     end
