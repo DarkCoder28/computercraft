@@ -1,7 +1,7 @@
 pretty = (require('cc.pretty')).pretty
 chat = peripheral.wrap('left')
 connection_url = 'ws://192.168.1.64:3002'
-local ws = http.websocket(connection_url)
+ws = http.websocket(connection_url)
 
 if not ws then
     os.reboot()
@@ -29,8 +29,8 @@ end
 chat.capture('')
 local function transmitter()
     local _, message, _, player = os.pullEvent('chat_capture')
-    chat.say('f')
     chat.say('<'..player..'> '..message)
+    ws.send(player..' |:| '..message)
 end
 
 while true do
