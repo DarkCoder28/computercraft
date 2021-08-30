@@ -28,9 +28,11 @@ end
 
 chat.capture('')
 local function transmitter()
-    local _, message, _, player = os.pullEvent('chat_capture')
-    chat.say('<'..player..'> '..message)
-    ws.send(player..' |:| '..message)
+    while true do
+        local _, message, _, player = os.pullEvent('chat_capture')
+        chat.say('<'..player..'> '..message)
+        ws.send(player..' |:| '..message)
+    end
 end
 
 while true do
