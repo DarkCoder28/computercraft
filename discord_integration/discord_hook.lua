@@ -8,7 +8,7 @@ if not ws then
 end
 ws.send('modded-chat')
 
-local function split(message)
+function split(message)
     local t = {}
     for str in string.gmatch(message, '([^|:|]+)') do
         table.insert(t,str)
@@ -16,7 +16,7 @@ local function split(message)
     return t
 end
 
-while true do
+local function receiver()
     local _, url, response, isBinary = os.pullEvent("websocket_message")
     if (url == connection_url and isBinary == false) then
         data = split(response)
@@ -24,4 +24,15 @@ while true do
         data[2] = data[2]:sub(2)
         chat.say('<'..data[1]..'> '..data[2])
     end
+end
+
+chat.capture()
+local function transmitter()
+    local _, message, _, player = os.pullEvent('chat_capture')
+    chat.say('f')
+    chat.say('<'..player..'> '..message)
+end
+
+while true do
+    parallel.waitForAll(receiver, transmitter)
 end
