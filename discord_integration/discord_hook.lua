@@ -7,9 +7,19 @@ if not ws then
 end
 ws.send('modded-chat')
 
+local function split(message)
+    local t = {}
+    for str in string.gmatch(message, '([^|:|]+)') do
+        table.insert(t,str)
+    end
+    return t
+end
+
 while true do
     local _, url, response, isBinary = os.pullEvent("websocket_message")
     if (url == connection_url and isBinary == false) then
-        print(response)
+        data = split(response)
+        data[1] = data[1]:sub(1,data[1]:len())
+        data[2] = data[2]:sub(2)
     end
 end
