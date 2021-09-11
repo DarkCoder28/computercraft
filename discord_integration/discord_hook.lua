@@ -35,7 +35,7 @@ local function transmitter()
     while true do
         local _, message, _, player = os.pullEvent('chat_capture')
         local prefixLen = len(player)+3
-        local messageLen = len(message)-prefixLen
+        local messageLen = len(message)-prefixLen-22
         if messageLen > 100 then
             chat.say('<'..player..'> '..message:sub(1,100-prefixLen))
             for i = 100-prefixLen, messageLen, 100 do
