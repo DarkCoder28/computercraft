@@ -26,7 +26,7 @@ function sendChat(sender, msg)
     local messageLen = len(msg)-prefixLen
     if messageLen > maxLen then
         chat.say('<'..sender..'> '..msg:sub(1,maxLen-prefixLen))
-        for i = maxLen-prefixLen-22, messageLen, maxLen do
+        for i = maxLen-prefixLen, messageLen, maxLen do
             chat.say(msg:sub(i,i+maxLen))
         end
     else
