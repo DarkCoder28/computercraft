@@ -34,7 +34,7 @@ chat.capture('')
 local function transmitter()
     while true do
         local _, message, _, player = os.pullEvent('chat_capture')
-        local maxLen = 80
+        local maxLen = 75
         local prefixLen = len(player)+3
         local messageLen = len(message)-prefixLen
         if messageLen > maxLen then
