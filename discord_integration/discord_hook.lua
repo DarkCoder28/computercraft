@@ -16,6 +16,10 @@ function split(message)
     return t
 end
 
+function len(str)
+    return #str
+end
+
 local function receiver()
     local _, url, response, isBinary = os.pullEvent("websocket_message")
     if (url == connection_url and isBinary == false) then
