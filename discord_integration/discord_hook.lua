@@ -34,12 +34,13 @@ chat.capture('')
 local function transmitter()
     while true do
         local _, message, _, player = os.pullEvent('chat_capture')
+        local maxLen = 80
         local prefixLen = len(player)+3
-        local messageLen = len(message)-prefixLen-22
-        if messageLen > 100 then
-            chat.say('<'..player..'> '..message:sub(1,100-prefixLen))
-            for i = 100-prefixLen-22, messageLen, 100 do
-                chat.say(message:sub(i,i+99))
+        local messageLen = len(message)-prefixLen
+        if messageLen > maxLen then
+            chat.say('<'..player..'> '..message:sub(1,maxLen-prefixLen))
+            for i = maxLen-prefixLen-22, messageLen, maxLen do
+                chat.say(message:sub(i,i+maxLen))
             end
         else
             chat.say('<'..player..'> '..message)
