@@ -38,7 +38,7 @@ local function transmitter()
         local messageLen = len(message)-prefixLen-22
         if messageLen > 100 then
             chat.say('<'..player..'> '..message:sub(1,100-prefixLen))
-            for i = 100-prefixLen, messageLen, 100 do
+            for i = 100-prefixLen-22, messageLen, 100 do
                 chat.say(message:sub(i,i+100))
             end
         else
