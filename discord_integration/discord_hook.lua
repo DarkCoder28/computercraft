@@ -30,7 +30,16 @@ chat.capture('')
 local function transmitter()
     while true do
         local _, message, _, player = os.pullEvent('chat_capture')
-        chat.say('<'..player..'> '..message)
+        local prefixLen = len(player)+3
+        local messageLen = len(message)-prefixLen
+        if messageLen > 100 then
+            chat.say('<'..player..'> '..message:sub(1,100-prefixLen))
+            for i = 100-prefixLen, messageLen, 100 do
+                chat.say(message:sub(i,i+100))
+            end
+        else
+            chat.say('<'..player..'> '..message)
+        end
         if not pcall(ws.send, player..' |:| '..message) then
             os.reboot()
         end
