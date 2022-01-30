@@ -38,8 +38,10 @@ while true do
                 turtle.turnRight()
             end
             if blockFront and front.name == 'minecraft:oak_planks' then
-                turnAround()
-                direction = false
+                if not direction then
+                    turnAround()
+                    direction = false
+                end
             elseif blockFront and front.name == 'minecraft:cobblestone' then
                 turtle.turnRight()
                 direction = false
