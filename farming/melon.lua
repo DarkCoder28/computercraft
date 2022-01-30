@@ -6,6 +6,7 @@ function turnAround()
 end
 
 direction = true
+skipreboot = true
 
 while true do
     local blockDown, down = turtle.inspectDown()
@@ -22,7 +23,10 @@ while true do
                 turtle.select(i)
                 turtle.dropDown()
             end
-            shell.run('reboot')
+            if not skipreboot then
+                shell.run('reboot')
+            end
+            skipreboot = false
         elseif down.name == 'minecraft:melon' then
             turtle.digDown()
             turtle.suckDown()
