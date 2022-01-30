@@ -41,8 +41,7 @@ while true do
             local bf, f = turtle.inspect()
             if bf and f.name == 'minecraft:oak_planks' then
                 if not direction then
-                    turnAround()
-                    direction = false
+                    turtle.turnLeft()
                 end
             elseif bf and f.name == 'minecraft:cobblestone' then
                 turtle.turnRight()
