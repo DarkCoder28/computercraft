@@ -25,10 +25,6 @@ while true do
                 turtle.select(i)
                 turtle.dropDown()
             end
-            local bf, f = turtle.inspect()
-            if bf and f.name == 'minecraft:cobblestone' then
-                turtle.turnLeft()
-            end
         elseif down.name == 'minecraft:melon' then
             turtle.digDown()
             turtle.suckDown()
@@ -37,15 +33,6 @@ while true do
                 turtle.turnLeft()
             else
                 turtle.turnRight()
-            end
-            local bf, f = turtle.inspect()
-            if bf and f.name == 'minecraft:oak_planks' then
-                if not direction then
-                    turtle.turnLeft()
-                end
-            elseif bf and f.name == 'minecraft:cobblestone' then
-                turtle.turnRight()
-                direction = false
             end
         elseif down.name == 'minecraft:sand' then
             if direction then
@@ -57,10 +44,6 @@ while true do
             direction = false
             if blockFront and front.name == 'minecraft:cobblestone' then
                 turnAround()
-            end
-            local bf, f = turtle.inspect()
-            if bf and f.name == 'minecraft:oak_planks' then
-                turtle.turnRight()
             end
         end
     end
