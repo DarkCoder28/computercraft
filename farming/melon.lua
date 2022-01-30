@@ -1,4 +1,8 @@
+local pretty = require "cc.pretty"
+
 --while true do
-    print(turtle.inspectDown())
-    print(turtle.inspect())
+    local blockDown, down = turtle.inspectDown()
+    pretty.pretty_print(down)
+    local blockFront, front = turtle.inspect()
+    pretty.pretty_print(front)
 --end
