@@ -10,12 +10,9 @@ direction = true
 while true do
     local blockDown, down = turtle.inspectDown()
     local blockFront, front = turtle.inspect()
-    if blockFront then
-        if front.name == 'minecraft:oak_planks' then
-            turtle.turnRight()
-        end
-    end
-    if blockDown then
+    if blockFront and front.name == 'minecraft:oak_planks' then
+        turtle.turnRight()
+    elseif blockDown then
         if down.name == 'minecraft:chest' then
             direction = true
             if blockFront and front.name == 'minecraft:sand' then
@@ -25,6 +22,7 @@ while true do
                 turtle.select(i)
                 turtle.dropDown()
             end
+            shell.run('reboot')
         elseif down.name == 'minecraft:melon' then
             turtle.digDown()
             turtle.suckDown()
