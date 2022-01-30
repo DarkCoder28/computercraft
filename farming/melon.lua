@@ -32,7 +32,7 @@ while true do
             if direction then
                 turtle.turnLeft()
             else
-                turtle.turnRight
+                turtle.turnRight()
             end
         elseif down.name == 'minecraft:sand' then
             if direction then
