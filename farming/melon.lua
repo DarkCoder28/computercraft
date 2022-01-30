@@ -5,6 +5,8 @@ function turnAround()
     turtle.turnRight()
 end
 
+direction = true
+
 while true do
     local blockDown, down = turtle.inspectDown()
     local blockFront, front = turtle.inspect()
@@ -22,17 +24,27 @@ while true do
                 turtle.select(i)
                 turtle.dropDown()
             end
+            direction = true
         elseif down.name == 'minecraft:melon' then
             turtle.digDown()
             turtle.suckDown()
         elseif down.name == 'minecraft:cobblestone' then
-            turtle.turnLeft()
+            if direction then
+                turtle.turnLeft()
+            else
+                turtle.turnRight
+            end
         elseif down.name == 'minecraft:sand' then
-            turtle.turnRight()
+            if direction then
+                turtle.turnRight()
+            else
+                turtle.turnLeft()
+            end
         elseif down.name == 'minecraft:oak_planks' then
             if blockFront and front.name == 'minecraft:cobblestone' then
                 turnAround()
             end
+            direction = false
         end
     end
     turtle.forward()
