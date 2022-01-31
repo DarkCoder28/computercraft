@@ -23,6 +23,12 @@ while true do
                 turtle.select(i)
                 turtle.dropDown()
             end
+            for i = 1, 16, 1 do
+                if turtle.getItemCount(i) > 0 then
+                    sleep(10)
+                    goto continue
+                end
+            end
             if not skipreboot then
                 shell.run('reboot')
             end
@@ -50,4 +56,5 @@ while true do
         end
     end
     turtle.forward()
+    ::continue::
 end
