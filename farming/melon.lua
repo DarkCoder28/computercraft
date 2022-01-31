@@ -7,6 +7,7 @@ end
 
 direction = true
 skipreboot = true
+skipiter = false
 
 while true do
     local blockDown, down = turtle.inspectDown()
@@ -26,7 +27,7 @@ while true do
             for i = 1, 16, 1 do
                 if turtle.getItemCount(i) > 0 then
                     sleep(10)
-                    goto continue
+                    skipiter = true
                 end
             end
             if not skipreboot then
@@ -55,6 +56,9 @@ while true do
             end
         end
     end
-    turtle.forward()
-    ::continue::
+    if not skipiter then
+        turtle.forward()
+    else
+        skipiter = false
+    end
 end
