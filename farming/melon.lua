@@ -26,7 +26,6 @@ while true do
             end
             for i = 1, 16, 1 do
                 if turtle.getItemCount(i) > 0 then
-                    sleep(10)
                     skipiter = true
                 end
             end
