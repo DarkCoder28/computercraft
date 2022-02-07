@@ -14,7 +14,7 @@ turtle.select(1)
 local ammt = turtle.getItemCount(1)
 for i = 1, ammt, 1 do
     turtle.drop(1)
-    while getItemName(altar.getItemDetail(1)) ~= getItemName(itemName) do
+    while getItemName(altar.getItemDetail(1).name) ~= getItemName(itemName) do
         sleep(1)
     end
     turtle.suck(1)
