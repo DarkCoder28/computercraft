@@ -9,7 +9,7 @@ local function getItemName(message)
     end
 end
 
-print("Crafting " .. output .. " from items in the first slot")
+print("Crafting " .. getItemName(itemName) .. " from items in the first slot")
 turtle.select(1)
 local ammt = turtle.getItemCount(1)
 for i = 1, ammt, 1 do
