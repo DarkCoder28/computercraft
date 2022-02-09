@@ -8,6 +8,8 @@ print("Fission Reactor Protection Active!")
 while true do
     if reactor.getDamagePercent() > 0 or reactor.getCoolantFilledPercentage() < 0.75 then
         if reactor.getStatus() then
+            term.setTextColour(colours.red)
+            print("!!!OVERLOADED!!!\nSCRAM!")
             reactor.scram()
         end
     end
