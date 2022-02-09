@@ -2,7 +2,7 @@ local reactor = peripheral.find("fissionReactorLogicAdapter")
 term.clear()
 term.setCursorPos(1,1)
 term.setTextColour(colours.yellow)
-print("ReactOS v1.0")
+print("ReactOS v1.1")
 term.setTextColour(colours.white)
 print("Fission Reactor Protection Active!")
 while true do
