@@ -20,6 +20,6 @@ while true do
         reactor.setInjectionRate(4)
     end
     clearTerm()
-    print('75000000 -> ' .. math.floor(caseTemp) .. ' <- 200000000')
+    print('75000000  -> ' .. math.floor(caseTemp) .. ' <- 200000000')
     print('200000000 -> ' .. math.floor(plasmaTemp) .. ' <- 350000000')
 end
