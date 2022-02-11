@@ -12,7 +12,6 @@ end
 clearTerm()
 
 while true do
-    clearTerm()
     caseTemp = reactor.getCaseTemperature()
     plasmaTemp = reactor.getPlasmaTemperature()
     if caseTemp >= 200000000 or plasmaTemp >= 350000000 then
@@ -20,4 +19,7 @@ while true do
     elseif caseTemp <= 75000000 or plasmaTemp <= 200000000 then
         reactor.setInjectionRate(4)
     end
+    clearTerm()
+    print('75000000 -> ' .. math.floor(caseTemp) .. ' <- 200000000')
+    print('200000000 -> ' .. math.floor(plasmaTemp) .. ' <- 350000000')
 end
